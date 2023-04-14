@@ -1,10 +1,10 @@
 import traer_api from "../services/data";
-import { GetStarWarsAction,StarWarsAction } from "../types/store";
+import { GetStarWarAction, StarWarAction } from "../types/store";
 
-export const getCharacter = async (): Promise<GetStarWarsAction> => {
-    const war = await traer_api();
+export const getPerson = async (): Promise<GetStarWarAction> => {
+    const star = await traer_api();
     return{
-        action: StarWarsAction.GET,
-        payload: war
+        action: StarWarAction.GET,
+        payload: star
     }
 }

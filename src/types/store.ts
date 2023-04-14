@@ -1,17 +1,17 @@
-import { interStar } from "./data";
+import { interWar } from "./data";
 export type Observed = ({ render:() => void} & HTMLElement);
 
 export type AppState ={
-    character: interStar[]
+    Person: interWar[]
 }
 
-export enum StarWarsAction {
+export enum StarWarAction {
     "GET" = "GET",
 }
 
-export interface GetStarWarsAction{
-    action:StarWarsAction.GET,
-    payload: interStar[]
+export interface GetStarWarAction{
+    action:StarWarAction.GET,
+    payload: interWar[]
 }
 
-export type Actions = GetStarWarsAction;
+export type Actions = GetStarWarAction;

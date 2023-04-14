@@ -1,4 +1,4 @@
-export interface interStar {
+export interface interWar {
     name: string;
     gender: string;
 }

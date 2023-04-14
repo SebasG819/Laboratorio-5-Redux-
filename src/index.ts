@@ -1,4 +1,6 @@
 import "./components/export"
+import "./screens/dashboard"
+import styles from "./components/card/styles.css"
 
 class AppContainer extends HTMLElement {
     constructor(){
@@ -11,8 +13,8 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const something = this.ownerDocument.createElement('div');
-        this.shadowRoot?.appendChild(something);
+        const cards = this.ownerDocument.createElement('app-dashboard');
+        this.shadowRoot?.appendChild(cards);
     }
 }
 

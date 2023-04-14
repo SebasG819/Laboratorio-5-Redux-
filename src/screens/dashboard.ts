@@ -1,6 +1,6 @@
 import Card, {Attribute} from "../components/card/card";
-import { getCharacter } from "../store/actions";
-import { addObserved,appState,dispatch } from "../store/index";
+import { getPerson } from "../store/actions";
+import { addObserved, appState, dispatch } from "../store/index";
 
 class Dashboard extends HTMLElement {
     constructor(){
@@ -9,16 +9,16 @@ class Dashboard extends HTMLElement {
         addObserved(this)
     }
     async connectedCallback(){
-        const action = await getCharacter();
+        const action = await getPerson();
         dispatch(action)
     }
 
     render(){
-        appState.character.forEach((data:any) => {
-            const StarWarsCard = this.ownerDocument.createElement("my-card") as Card;
-            StarWarsCard.setAttribute(Attribute.name, data.name);
-            StarWarsCard.setAttribute(Attribute.gender, data.gender);
-            this.shadowRoot?.appendChild(StarWarsCard)
+        appState.Person.forEach((data:any) => {
+            const StarWarCard = this.ownerDocument.createElement("my-card") as Card;
+            StarWarCard.setAttribute(Attribute.name, data.name);
+            StarWarCard.setAttribute(Attribute.gender, data.gender);
+            this.shadowRoot?.appendChild(StarWarCard)
         })
     }
 }
